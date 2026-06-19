@@ -140,7 +140,7 @@ app/
   fixtures_loader.py the single point coupled to the fixture JSON shapes
 fixtures/            catalog, policies, budgets, sample_requests
 scripts/demo.py      end-to-end demonstration
-tests/               case suite, gate, tool validation, output schema, API
+tests/               case suite, gate, tool validation + registry dispatch, bypass (EN+ZH), logging, output schema, API
 docs/                ARCHITECTURE.md, AI_USAGE.md
 ```
 
