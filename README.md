@@ -22,9 +22,15 @@ an `APPROVED` run state.
 
 ```bash
 python -m venv .venv && source .venv/bin/activate    # Windows: .venv\Scripts\activate
-pip install -e ".[dev]"                              # or: pip install fastapi "uvicorn[standard]" pydantic pytest httpx
+pip install -e ".[dev]"                              # app (editable) + test deps (pytest, httpx)
 uvicorn app.main:app --reload
 ```
+
+> Use `pip install -e ".[dev]"` to run **everything**: the editable install puts
+> `app` on the import path (so `uvicorn app.main:app` works from any directory)
+> and pulls in `pytest`/`httpx` for the test suite. To only *run the server*,
+> `pip install -r requirements.txt` (runtime deps only) is enough — that's what
+> the Dockerfile uses.
 
 Example request (case_002 — hardware → needs approval):
 
